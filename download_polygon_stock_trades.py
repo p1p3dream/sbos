@@ -48,15 +48,18 @@ def download_missing_files_from_s3(local_directory, bucket_name, s3_prefix, aws_
 # download_missing_files_from_s3(local_directory, bucket_name, s3_prefix, aws_profile)
 
 # Example usage that loops through years and months
-base_local_directory = '/Volumes/WD18TB/us_stocks/trades'
-base_local_directory = '/Volumes/WD18TB/us_options/minute_aggs'
+base_local_directory = '/Users/ec2-user/stonkbot_data/us_stocks/trades'
 base_s3_prefix = 'us_stocks_sip/trades_v1'
+base_local_directory = '/Volumes/WD18TB/us_options/minute_aggs'
 base_s3_prefix = 'us_options_opra/minute_aggs_v1'
+base_local_directory = "/Users/brandon/Documents/polygon_data/minute_aggs/"
+base_s3_prefix = 'us_stocks_sip/minute_aggs_v1'
+
 bucket_name = 'flatfiles'
 aws_profile = 'polygon'
 
 # Loop through the years
-start_date = datetime(2023, 4, 1)  # Start from March 2022
+start_date = datetime(2024, 4, 1)  # Start from March 2022
 
 for year in range(start_date.year, 2025):
     # Loop through all months
